@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Words</title>
+</head>
+<body>
+<div th:switch="${words}">
+    <h2 th:case="null">No words found!</h2>
+    <div th:case="*">
+        <h2>Words</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Word</th>
+                <th>Count</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="word : ${words}">
+                <td th:text="${word.id}"></td>
+                <td th:text="${word.word}"></td>
+                <td th:text="${word.count}"></td>
+                <td><a th:href="@{word-delete/{id}(id=${word.id})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/word-parsing">Choose a site for parsing</a></p>
+    <p><a href="/word-delete">Delete all</a></p>
+</div>
+</body>
+</html>
