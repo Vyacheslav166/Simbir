@@ -5,7 +5,7 @@
 Точка входа: http://localhost:8080/words
 
 
-Технологии:
+Основные технологии:
 - Java, 
 - Maven,
 - Spring Boot, 
