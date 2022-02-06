@@ -1,6 +1,6 @@
 package com.javalike.simbir.controller;
 
-import com.javalike.simbir.model.Url;
+import com.javalike.simbir.model.SiteUrl;
 import com.javalike.simbir.model.Word;
 import com.javalike.simbir.service.WordService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,7 +42,7 @@ public class WordController {
      * @return Форму для ввода URL HTML-страницы
      */
     @GetMapping("/word-parsing")
-    public String parsingWordForm(Url url) {
+    public String parsingWordForm(SiteUrl url) {
         return "word-parsing";
     }
 
@@ -53,7 +53,7 @@ public class WordController {
      * @return HTML страницу со списком слов
      */
     @PostMapping("/word-parsing")
-    public String parsingWord(Url url) {
+    public String parsingWord(SiteUrl url) {
         wordService.parseWord(url);
         return "redirect:/words";
     }

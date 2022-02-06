@@ -1,6 +1,6 @@
 package com.javalike.simbir.service;
 
-import com.javalike.simbir.model.Url;
+import com.javalike.simbir.model.SiteUrl;
 import com.javalike.simbir.model.Word;
 import org.springframework.stereotype.Service;
 
@@ -8,13 +8,13 @@ import java.util.List;
 
 @Service
 public interface WordService {
-    public void parseWord(Url url);
-    public Word saveWord(Word word);
-    public void deleteAll();
-    public void deleteById(Long id);
-    public List<Word> getAll();
-    public Word getById(Long id);
-    public Long isExist(String wordValue);
-    public void incrementCount(Long id);
+    void parseWord(SiteUrl url);
+    Word saveWord(Word word);
+    void deleteAll();
+    void deleteById(Long id);
+    List<Word> getAll();
+    Word getById(Long id);
+    Long isExist(String wordValue);
+    void incrementCount(Long id);
 
 }

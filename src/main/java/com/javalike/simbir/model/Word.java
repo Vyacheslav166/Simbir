@@ -3,6 +3,7 @@ package com.javalike.simbir.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Data
 @Entity
@@ -18,4 +19,22 @@ public class Word {
 
     @Column(name = "count")
     private Integer count;
+
+    public void incrementCount() {
+        setCount(Objects.requireNonNullElse(getCount(), 0) + 1);
+    }
+
+    public static Word getInstance() {
+        return new Word();
+    }
+
+    public Word withWord(String word) {
+        this.word = word;
+        return this;
+    }
+
+    public Word withCount(int count) {
+        this.count = count;
+        return this;
+    }
 }

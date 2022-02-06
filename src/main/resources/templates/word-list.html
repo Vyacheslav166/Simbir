@@ -12,14 +12,12 @@
         <table>
             <thead>
             <tr>
-                <th>Id</th>
                 <th>Word</th>
                 <th>Count</th>
             </tr>
             </thead>
             <tbody>
             <tr th:each="word : ${words}">
-                <td th:text="${word.id}"></td>
                 <td th:text="${word.word}"></td>
                 <td th:text="${word.count}"></td>
                 <td><a th:href="@{word-delete/{id}(id=${word.id})}">Delete</a></td>
